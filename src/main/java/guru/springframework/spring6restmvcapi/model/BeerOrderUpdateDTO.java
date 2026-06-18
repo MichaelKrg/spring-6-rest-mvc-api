@@ -18,6 +18,9 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BeerOrderUpdateDTO {
+    @NotNull
+    private UUID id;
+
     private String customerRef;
 
     @NotNull

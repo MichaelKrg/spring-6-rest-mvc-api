@@ -22,9 +22,9 @@ public class BeerOrderShipmentDTO {
 
     private Long version;
 
-    @NotBlank
-    private String trackingNumber;
-
     private Timestamp createdDate;
     private Timestamp lastModifiedDate;
+
+    @NotBlank
+    private String trackingNumber;
 }

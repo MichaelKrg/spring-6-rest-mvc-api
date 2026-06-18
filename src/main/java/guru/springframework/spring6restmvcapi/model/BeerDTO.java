@@ -1,7 +1,9 @@
 package guru.springframework.spring6restmvcapi.model;
 
+import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -35,6 +37,8 @@ public class BeerDTO {
     private Integer quantityOnHand;
 
     @NotNull
+    @Digits(integer = 4, fraction = 2)
+    @Positive
     private BigDecimal price;
     private LocalDateTime createdDate;
     private LocalDateTime updateDate;

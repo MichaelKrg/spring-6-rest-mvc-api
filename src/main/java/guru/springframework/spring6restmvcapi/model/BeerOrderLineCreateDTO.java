@@ -21,6 +21,6 @@ public class BeerOrderLineCreateDTO {
     @NotNull
     private UUID beerId;
 
-    @Min(value = 1, message = "Quantity On Hand must be greater than 0")
+    @Min(value = 1, message = "Quantity ordered must be greater than 0")
     private Integer orderQuantity;
 }

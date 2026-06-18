@@ -17,13 +17,14 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BeerOrderLineUpdateDTO {
-
+    // for the update we can give the id (to update an existing line)
+    // or leave it empty (add new line)
     private UUID id;
 
     @NotNull
     private UUID beerId;
 
-    @Min(value = 1, message = "Quantity On Hand must be greater than 0")
+    @Min(value = 1, message = "Quantity ordered must be greater than 0")
     private Integer orderQuantity;
 
     private Integer quantityAllocated;

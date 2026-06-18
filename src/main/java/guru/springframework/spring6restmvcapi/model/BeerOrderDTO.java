@@ -13,23 +13,32 @@ import java.util.UUID;
 /**
  * Created by jt, Spring Framework Guru.
  */
-@Builder
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@Data
 public class BeerOrderDTO {
+
+    // Relation methods
+    public void setCustomer(CustomerDTO customer) {
+        this.customer = customer;
+    }
+
+    public void setBeerOrderShipment(BeerOrderShipmentDTO beerOrderShipment) {
+        this.beerOrderShipment = beerOrderShipment;
+    }
+
+    // normal attributes
     private UUID id;
     private Long version;
     private Timestamp createdDate;
     private Timestamp lastModifiedDate;
 
     private String customerRef;
-
-    private CustomerDTO customer;
-
     private BigDecimal paymentAmount;
 
+    // relation attributes
+    private CustomerDTO customer;
     private Set<BeerOrderLineDTO> beerOrderLines;
-
     private BeerOrderShipmentDTO beerOrderShipment;
 }
